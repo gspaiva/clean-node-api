@@ -128,7 +128,7 @@ describe('SignUp Controller', () => {
         passwordConfirmation: 'any_password'
       }
     }
-    sut.handle(httpRequest)
+    await sut.handle(httpRequest)
     expect(isValidSpy).toHaveBeenCalledWith('invalid_email@email.com')
   })
 
@@ -162,7 +162,7 @@ describe('SignUp Controller', () => {
         passwordConfirmation: 'any_password'
       }
     }
-    sut.handle(httpRequest)
+    await sut.handle(httpRequest)
     expect(addAccountSpy).toHaveBeenCalledWith({
       name: 'valid_name',
       email: 'valid@email.com',
